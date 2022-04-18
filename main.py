@@ -6,10 +6,8 @@ def clearConsole():
         command = 'cls'
     os.system(command)
 
-run = True
 
-while run:
-
+def main_menu():
     print("""
     ████████╗██╗ ██████╗    ████████╗ █████╗  ██████╗    ████████╗ ██████╗ ███████╗
     ╚══██╔══╝██║██╔════╝    ╚══██╔══╝██╔══██╗██╔════╝    ╚══██╔══╝██╔═══██╗██╔════╝
@@ -30,12 +28,9 @@ while run:
                                 ('Q')EXIT
                                    
                                 """)
-    
-    while run:
-        x = input("Select the number of your menu: ")
-        clearConsole()
-        if x == '0':
-            print("""
+
+def rules():
+    print("""
                     ██████╗ ██╗   ██╗██╗     ███████╗███████╗
                     ██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
                     ██████╔╝██║   ██║██║     █████╗  ███████╗
@@ -56,6 +51,19 @@ while run:
             If no player has 3 marks in a row, the game ends in a tie.
 
             """)
+
+
+run = True
+
+while run:
+
+    main_menu()
+    while run:
+        x = input("Select the number of your menu: ")
+        clearConsole()
+        if x == '0':
+            rules()
+
             menu = True          
             while menu:
                 y = input("Type \'Y' for returning to Main Menu: ")
@@ -63,40 +71,23 @@ while run:
                     clearConsole()
                     menu = False
                 else:
+                    clearConsole()
+                    rules()
                     print("Invalid input!")
             
             break
         elif x == '1':
-            print("number 1")
+            print("number 1") # level_one.py
 
         elif x == '2':
-            print("number 2")
+            print("number 2") # level_two.py
 
         elif x == '3':
-            print("number 3")
+            print("number 3") # level_three.py
             
         elif x == "Q" or x == 'q':
             run = False
 
         else:
-            print("""
-    ████████╗██╗ ██████╗    ████████╗ █████╗  ██████╗    ████████╗ ██████╗ ███████╗
-    ╚══██╔══╝██║██╔════╝    ╚══██╔══╝██╔══██╗██╔════╝    ╚══██╔══╝██╔═══██╗██╔════╝
-       ██║   ██║██║    █████╗  ██║   ███████║██║    █████╗  ██║   ██║   ██║█████╗  
-       ██║   ██║██║    ╚════╝  ██║   ██╔══██║██║    ╚════╝  ██║   ██║   ██║██╔══╝  
-       ██║   ██║╚██████╗       ██║   ██║  ██║╚██████╗       ██║   ╚██████╔╝███████╗
-       ╚═╝   ╚═╝ ╚═════╝       ╚═╝   ╚═╝  ╚═╝ ╚═════╝       ╚═╝    ╚═════╝ ╚══════╝
-                                                                        
-
-                                (0)Rules
-            
-                                (1)Player vs Player
-            
-                                (2)Player vs Machine
-            
-                                (3)Machine vs Machine
-
-                                ('Q')EXIT
-
-                                """)
+            main_menu()
             print("Invalid input!")
