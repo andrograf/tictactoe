@@ -1,13 +1,13 @@
-import os, sys
+import os
 
 def clearConsole():
     command = 'clear'
-    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+    if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
 
 run = True
-menu = True
+
 while run:
 
     print("""
@@ -26,6 +26,9 @@ while run:
                                 (2)Player vs Machine
             
                                 (3)Machine vs Machine
+
+                                ('Q')EXIT
+                                   
                                 """)
     
     while run:
@@ -53,14 +56,15 @@ while run:
             If no player has 3 marks in a row, the game ends in a tie.
 
             """)
-                        
+            menu = True          
             while menu:
                 y = input("Type \'Y' for returning to Main Menu: ")
                 if y == 'Y' or y == 'y':
+                    clearConsole()
                     menu = False
                 else:
                     print("Invalid input!")
-            clearConsole()
+            
             break
         elif x == '1':
             print("number 1")
@@ -91,5 +95,8 @@ while run:
                                 (2)Player vs Machine
             
                                 (3)Machine vs Machine
+
+                                ('Q')EXIT
+
                                 """)
             print("Invalid input!")
