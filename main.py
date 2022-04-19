@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 def clearConsole():
     command = 'clear'
@@ -15,7 +16,8 @@ def main_menu():
        ██║   ██║██║    ╚════╝  ██║   ██╔══██║██║    ╚════╝  ██║   ██║   ██║██╔══╝  
        ██║   ██║╚██████╗       ██║   ██║  ██║╚██████╗       ██║   ╚██████╔╝███████╗
        ╚═╝   ╚═╝ ╚═════╝       ╚═╝   ╚═╝  ╚═╝ ╚═════╝       ╚═╝    ╚═════╝ ╚══════╝
-                                                                        
+                                                                        by TOE FIGHTERS      
+
 
                                 (0)Rules
             
@@ -26,7 +28,8 @@ def main_menu():
                                 (3)Machine vs Machine
 
                                 ('Q')EXIT
-                                   
+
+
                                 """)
 
 def rules():
@@ -39,6 +42,7 @@ def rules():
                     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝
                                                 for Tic-Tac-Toe
                     
+
             1. The game is played on a grid that's 3 squares by 3 squares.
 
             2. Player-1(/machine) are X, player-2(/machine) is O. 
@@ -50,13 +54,30 @@ def rules():
             4. When all 9 squares are full, the game is over.
             If no player has 3 marks in a row, the game ends in a tie.
 
+
             """)
 
+def credits():
+    print("""                       
+                                +-+-+-+-+-+-+-+
+                                |C|R|E|D|I|T|S|
+                                +-+-+-+-+-+-+-+
+
+
+                             +-+-+-+-+-+-+-+-+-+-+
+                             |                   |
+                             |    Hájas Tamás    |
+                             |                   |
+                             |  Pusztai Patrícia |
+                             |                   |
+                             |  Mirejder Róbert  |
+                             |                   |
+                             +-+-+-+-+-+-+-+-+-+-+""")
 
 run = True
 
 while run:
-
+    clearConsole()
     main_menu()
     while run:
         x = input("Select the number of your menu: ")
@@ -70,6 +91,11 @@ while run:
                 if y == 'Y' or y == 'y':
                     clearConsole()
                     menu = False
+                elif y == '':
+                    clearConsole()
+                    rules()
+                    pass
+
                 else:
                     clearConsole()
                     rules()
@@ -86,7 +112,15 @@ while run:
             print("number 3") # level_three.py
             
         elif x == "Q" or x == 'q':
+            clearConsole()
+            credits()
+            sleep(4)
+            clearConsole()
             run = False
+        
+        elif x == '':
+            main_menu()
+            pass
 
         else:
             main_menu()
