@@ -1,6 +1,6 @@
 import os
 from time import sleep
-
+from level_three import level_three
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):
@@ -115,8 +115,11 @@ while run:
             print("number 2") # level_two.py
 
         elif x == '3':
-            print("number 3") # level_three.py
-            
+            clearConsole()
+            level_three() # level_three.py
+            clearConsole()
+            break
+
         elif x == "Q" or x == 'q':
             clearConsole()
             credits()
