@@ -1,10 +1,10 @@
 from re import I
-import os 
+import os
 import time
 
 
 board = [' ' for x in range(10)]
-
+keyCorrect = {"a1":1, "a2":2, "a3":3,"b1":4, "b2":5, "b3":6,"c1":7, "c2":8, "c3":9}
 
 def clearConsole():
     command = 'clear'
@@ -22,15 +22,21 @@ def spaceIsFree(pos):
 
 
 def printBoard(board):
+    board2 = []
+    for i in board:
+        if i == " ":
+            board2.append(".")
+        else:
+            board2.append(i)
+        
     print("   1   2   3")
     print(' +---+---+---+')
-    print('A| ' + board[1] + ' | ' + board[2] + ' | ' + board[3] + ' |')
+    print('A| ' + board2[1] + ' | ' + board2[2] + ' | ' + board2[3] + ' |')
     print(' +---+---+---+')
-    print('B| ' + board[4] + ' | ' + board[5] + ' | ' + board[6] + ' |')
+    print('B| ' + board2[4] + ' | ' + board2[5] + ' | ' + board2[6] + ' |')
     print(' +---+---+---+')
-    print('C| ' + board[7] + ' | ' + board[8] + ' | ' + board[9] + ' |')
+    print('C| ' + board2[7] + ' | ' + board2[8] + ' | ' + board2[9] + ' |')
     print(' +---+---+---+')
-    
 
 
 def isWinner(bo, le):
@@ -44,12 +50,14 @@ def isWinner(bo, le):
             (bo[1] == le and bo[5] == le and bo[9] == le))
 
 
+
 def playerMove():
     run = True
     while run:
-        
+
         move = input('Please select a position to place X: ')
         try:
+            move = keyCorrect[move.lower()]
             move = int(move)
             if move > 0 and move < 10:
                 if spaceIsFree(move):
@@ -61,12 +69,11 @@ def playerMove():
                 print('Please type a coordinate within the range')
         except:
             print("Please type a valid coordinate!")
-        
 
 
 def compMove():
     possibleMoves = [x for x, letter in enumerate(board)
-        if letter == ' ' and x != 0]
+                     if letter == ' ' and x != 0]
     move = 0
 
     for let in ['O', 'X']:
@@ -99,7 +106,6 @@ def compMove():
         move = selectRandom(edgesOpen)
     clearConsole()
     return move
-    
 
 
 def selectRandom(li):
@@ -131,44 +137,25 @@ def main():
         if not (isWinner(board, 'X')):
             move = compMove()
             if move == 0:
-                pass#print('Tie game!')
+                clearConsole()
+                pass
+                #print('Tie game!')
             else:
                 insertLetter('O', move)
-                print('Computer placed an O in position', move, ':')
+                # print('Computer placed an O in position', move, ':')
                 printBoard(board)
         else:
+            printBoard(board)
             print("You won the game!")
             break
     if isBoardFull(board):
+        printBoard(board)
         print('Tie game!')
-        
-main() #ezt ki kell majd szedni?
+
+
+main()  # ezt ki kell majd szedni
 
 # board = [[".", ".", "."],[".", ".", "."],[".", ".", "."]]
 
-# def get_empty_board():
-#     print(board)
 
-# def display_board():
-#     print("""
-#  +--+--+
-# A|.|.|.|
-#  +--+--+
-# B|.|.|.|
-#  +--+--+
-# C|.|.|.|
-#  +--+--+
-#   1 2 3 """)
 
-# def formated_board(board):
-#     for rowind in range(len(board)):
-#         for cellind in range(len(board[rowind])):
-#             print(board[rowind][cellind], end = "")
-#         print()
-
-# x = int(input("Set row: "))
-# y = int(input("Set col: "))
-
-# board[x-1][y-1] = "X"
-
-# formated_board(board)
