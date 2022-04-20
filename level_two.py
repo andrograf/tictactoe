@@ -22,6 +22,7 @@ def spaceIsFree(pos):
 
 
 def printBoard(board):
+    print("   1   2   3")
     print(' +---+---+---+')
     print('A| ' + board[1] + ' | ' + board[2] + ' | ' + board[3] + ' |')
     print(' +---+---+---+')
@@ -29,7 +30,7 @@ def printBoard(board):
     print(' +---+---+---+')
     print('C| ' + board[7] + ' | ' + board[8] + ' | ' + board[9] + ' |')
     print(' +---+---+---+')
-    print("   1   2   3")
+    
 
 
 def isWinner(bo, le):
