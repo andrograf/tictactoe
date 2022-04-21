@@ -62,10 +62,10 @@ def playerMove(board, keyCorrect):
         try:
             move = keyCorrect[move.lower()]
             move = abs(int(move))
-            if move == 0:
-                clearConsole()
-                game_over()
-                return True
+            if move == 11:
+                #clearConsole()
+                #game_over()
+                return move
 
             elif 1 <= move < 10:
                 if spaceIsFree(move,board):
@@ -76,7 +76,7 @@ def playerMove(board, keyCorrect):
                     clearConsole()
                     printBoard(board)
                     print('Sorry, this space is occupied. Please try an other one!')
-            elif move > 10:
+            elif move > 11:
                 clearConsole()
                 printBoard(board)
                 print('Please type a coordinate within the range')
@@ -138,15 +138,19 @@ def isBoardFull(board):
     else:
         return True
 
+def move_(playerMove, board, keyCorrect):
+    return playerMove(board, keyCorrect)
 
 def main():
     board = [' ' for x in range(10)]
-    keyCorrect = {"a1":1, "a2":2, "a3":3,"b1":4, "b2":5, "b3":6,"c1":7, "c2":8, "c3":9, 'q':0}
+    keyCorrect = {"a1":1, "a2":2, "a3":3,"b1":4, "b2":5, "b3":6,"c1":7, "c2":8, "c3":9, 'q':11}
     printBoard(board)
     while not (isBoardFull(board)):
         if not (isWinner(board, 'O')):
-            playerMove(board, keyCorrect)
-            if playerMove == True:
+            #playerMove(board, keyCorrect)
+            if  move_(playerMove, board, keyCorrect) == 11:
+                clearConsole()
+                game_over()
                 time.sleep(5)
                 clearConsole()
                 break
