@@ -3,8 +3,7 @@ import os
 import time
 
 
-board = [' ' for x in range(10)]
-keyCorrect = {"a1":1, "a2":2, "a3":3,"b1":4, "b2":5, "b3":6,"c1":7, "c2":8, "c3":9}
+
 
 def clearConsole():
     command = 'clear'
@@ -13,11 +12,11 @@ def clearConsole():
     os.system(command)
 
 
-def insertLetter(letter, pos):
+def insertLetter(letter, pos, board):
     board[pos] = letter
 
 
-def spaceIsFree(pos):
+def spaceIsFree(pos, board):
     return board[pos] == ' '
 
 
@@ -51,7 +50,7 @@ def isWinner(bo, le):
 
 
 
-def playerMove():
+def playerMove(board, keyCorrect):
     run = True
     while run:
 
@@ -60,18 +59,25 @@ def playerMove():
             move = keyCorrect[move.lower()]
             move = int(move)
             if move > 0 and move < 10:
-                if spaceIsFree(move):
+                if spaceIsFree(move,board):
                     run = False
-                    insertLetter('X', move)
+                    insertLetter('X', move, board)
+                    
                 else:
+                    clearConsole()
+                    printBoard(board)
                     print('Sorry, this space is occupied. Please try an other one!')
             else:
+                clearConsole()
+                printBoard(board)
                 print('Please type a coordinate within the range')
         except:
+            clearConsole()
+            printBoard(board)
             print("Please type a valid coordinate!")
 
 
-def compMove():
+def compMove(board):
     possibleMoves = [x for x, letter in enumerate(board)
                      if letter == ' ' and x != 0]
     move = 0
@@ -97,6 +103,7 @@ def compMove():
     if 5 in possibleMoves:
         move = 5
         return move
+    time.sleep(1)
 
     edgesOpen = []
     for i in possibleMoves:
@@ -123,37 +130,46 @@ def isBoardFull(board):
 
 
 def main():
+    board = [' ' for x in range(10)]
+    keyCorrect = {"a1":1, "a2":2, "a3":3,"b1":4, "b2":5, "b3":6,"c1":7, "c2":8, "c3":9, 'q':0}
     printBoard(board)
-
     while not (isBoardFull(board)):
         if not (isWinner(board, 'O')):
-            playerMove()
+            playerMove(board, keyCorrect)
+            
             printBoard(board)
             clearConsole()
+            
         else:
             print("Sorry, the computer won this time!")
+            time.sleep(3)
             break
 
         if not (isWinner(board, 'X')):
-            move = compMove()
+            move = compMove(board)
             if move == 0:
                 clearConsole()
                 pass
                 #print('Tie game!')
             else:
-                insertLetter('O', move)
+                printBoard(board)
+                time.sleep(1.5)
+                clearConsole()
+                insertLetter('O', move, board)
                 # print('Computer placed an O in position', move, ':')
                 printBoard(board)
         else:
             printBoard(board)
             print("You won the game!")
+            time.sleep(3)
             break
     if isBoardFull(board):
         printBoard(board)
         print('Tie game!')
+        time.sleep(3)
 
 
-main()  # ezt ki kell majd szedni
+#main()  # ezt ki kell majd szedni
 
 # board = [[".", ".", "."],[".", ".", "."],[".", ".", "."]]
 

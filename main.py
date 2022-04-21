@@ -1,6 +1,8 @@
 import os
 from time import sleep
 from level_three import level_three
+from level_one_modified import game
+from level_two import main
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):
@@ -109,10 +111,16 @@ while run:
             
             break
         elif x == '1':
-            print("number 1") # level_one.py
+            clearConsole()
+            game() # level_three.py
+            clearConsole()
+            break
 
         elif x == '2':
-            print("number 2") # level_two.py
+            clearConsole()
+            main() # level_three.py
+            clearConsole()
+            break
 
         elif x == '3':
             clearConsole()
