@@ -1,23 +1,6 @@
-"""board = [[".", ".", "."],[".", ".", "."],[".", ".", "."]]
-
-for row_ind in range(len(board)):
-    for cell_ind in range (len(board[row_ind])):
-        print(board[row_ind][cell_ind], end = "")
-    print()
-    
-x = int(input("Set row: "))
-y = int(input("Set col: "))
-
-board[x][y] = "X"
-
-for row_ind in range(len(board)):
-    for cell_ind in range (len(board[row_ind])):
-        print(board[row_ind][cell_ind], end = "")
-    print()
-
-"""
 import os
 from time import sleep
+from gameover import game_over
   
 def clearConsole():
     command = 'clear'
@@ -124,7 +107,7 @@ def modify_array(num, turn, gameBoard):
 def game():
     turn_counter = 0
     gameBoard = [["#", "1", "2", "3"], ["A", ".", ".", "."], ["B", ".", ".", "."], ["C", ".", ".", "."]]
-    pickable_steps = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"]       
+    pickable_steps = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3", "Q"]       
     steps = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"] 
     while True:
         
@@ -134,14 +117,19 @@ def game():
             print("O's turn.")
             numberPicked = input("Choose a step from the coordinates: ").upper()
             clearConsole()
-            if numberPicked in steps:
+            if numberPicked == "Q":
+                game_over()
+                sleep(5)
+                break
+            elif (numberPicked in steps) and numberPicked != 'Q':
                 if numberPicked in pickable_steps:
                     pickable_steps.remove(numberPicked)
                     modify_array(numberPicked, "O", gameBoard)
                     turn_counter += 1
                 else:
                     print("Already used input!")
-            else:
+            
+            elif (numberPicked not in steps) and numberPicked != 'Q':
                 print("Invalid input, try again!")
 
 
@@ -152,7 +140,11 @@ def game():
             print("X's turn.")
             numberPicked = input("Choose a step from the coordinates: ").upper()
             clearConsole()
-            if numberPicked in steps:
+            if numberPicked == "Q":
+                game_over()
+                sleep(5)
+                break
+            elif numberPicked in steps:
                 if numberPicked in pickable_steps:
                     pickable_steps.remove(numberPicked)
                     modify_array(numberPicked, "X", gameBoard)

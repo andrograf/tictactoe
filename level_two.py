@@ -1,6 +1,7 @@
 from re import I
 import os
 import time
+from gameover import game_over
 
 
 
@@ -48,6 +49,9 @@ def isWinner(bo, le):
             (bo[3] == le and bo[5] == le and bo[7] == le) or
             (bo[1] == le and bo[5] == le and bo[9] == le))
 
+def kill_move():
+    stop = False
+    return stop
 
 
 def playerMove(board, keyCorrect):
@@ -57,20 +61,26 @@ def playerMove(board, keyCorrect):
         move = input('Please select a position to place X: ')
         try:
             move = keyCorrect[move.lower()]
-            move = int(move)
-            if move > 0 and move < 10:
+            move = abs(int(move))
+            if move == 0:
+                clearConsole()
+                game_over()
+                return True
+
+            elif 1 <= move < 10:
                 if spaceIsFree(move,board):
-                    run = False
+                    #run = False
                     insertLetter('X', move, board)
-                    
+                    break
                 else:
                     clearConsole()
                     printBoard(board)
                     print('Sorry, this space is occupied. Please try an other one!')
-            else:
+            elif move > 10:
                 clearConsole()
                 printBoard(board)
                 print('Please type a coordinate within the range')
+            
         except:
             clearConsole()
             printBoard(board)
@@ -136,13 +146,20 @@ def main():
     while not (isBoardFull(board)):
         if not (isWinner(board, 'O')):
             playerMove(board, keyCorrect)
-            
-            printBoard(board)
-            clearConsole()
+            if playerMove == True:
+                time.sleep(5)
+                clearConsole()
+                break
+            else:
+                printBoard(board)
+                clearConsole()
             
         else:
-            print("Sorry, the computer won this time!")
-            time.sleep(3)
+            #printBoard(board)
+            time.sleep(1.5)
+            clearConsole()
+            game_over()
+            time.sleep(5)
             break
 
         if not (isWinner(board, 'X')):
