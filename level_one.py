@@ -24,20 +24,19 @@ def clearConsole():
         command = 'cls'
     os.system(command)
     
-gameBoard = [["A", ".", ".", "."], ["B", ".", ".", "."], ["C", ".", ".", "."]]
+gameBoard = [["A", "   ", "   ", "   "], ["B", "   ", "   ", "   "], ["C", "   ", "   ", "   "]]
 rows = 4
 cols = 4
 
 def printGameBoard():
-    print("      1    2    3")
-    for x in range(rows):
-        #print("\n    +---+---+---+")
-        print("|", end="")
-        for y in range(cols):
-            print("", gameBoard[x][y], end=" |")
-        print("\n    +---+---+---+")
-        #print()
-    #print("\n    +---+---+---+")
+    for i in range(1):
+        print('   1   2   3')
+        print(' +---+---+---+')
+        for y in gameBoard:
+            for s in y:
+                print(s + '|', end='')
+            print()
+            print(' +---+---+---+')
 
 
 def winner(gameBoard):

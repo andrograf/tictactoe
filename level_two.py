@@ -1,7 +1,7 @@
 from re import I
 import os
 import time
-from gameover import game_over
+from gameover import game_over, win_x, tie
 
 
 
@@ -170,19 +170,23 @@ def main():
                 #print('Tie game!')
             else:
                 printBoard(board)
-                time.sleep(1.5)
+                time.sleep(1)
                 clearConsole()
                 insertLetter('O', move, board)
                 # print('Computer placed an O in position', move, ':')
                 printBoard(board)
         else:
             printBoard(board)
-            print("You won the game!")
-            time.sleep(3)
+            time.sleep(2)
+            clearConsole()
+            win_x()
+            time.sleep(2)
             break
     if isBoardFull(board):
         printBoard(board)
-        print('Tie game!')
+        time.sleep(1)
+        clearConsole()
+        tie()
         time.sleep(3)
 
 

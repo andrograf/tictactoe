@@ -1,6 +1,7 @@
 import os
 from time import sleep
 from gameover import game_over
+from gameover import win_x, win_o, tie
   
 def clearConsole():
     command = 'clear'
@@ -13,100 +14,154 @@ rows = 4
 cols = 4
 
 def printGameBoard(gameBoard):
-    for x in range(rows):
-        print("\n+---+---+---+---+")
-        print("|", end="")
-        for y in range(cols):
-            print("", gameBoard[x][y], end=" |")
-    print("\n+---+---+---+---+")
+    for i in range(1):
+        print('   1   2   3')
+        print(' +---+---+---+')
+        for y in gameBoard:
+            for s in y:
+                print(s + '|', end='')
+            print()
+            print(' +---+---+---+')
 
 
 def winner(gameBoard):
     # X axis
 
-    if gameBoard [1][1] == "X" and gameBoard [1][2] == "X" and gameBoard [1][3] == "X":
-        return "X has won the game"
+    if gameBoard [0][1] == " X " and gameBoard [0][2] == " X " and gameBoard [0][3] == " X ":
+        return win_x()
     
-    elif gameBoard [1][1] == "O" and gameBoard [1][2] == "O" and gameBoard [1][3] == "O":
-        return "O has won the game"
+    elif gameBoard [0][1] == " O " and gameBoard [0][2] == " O " and gameBoard [0][3] == " O ":
+        return win_o()
     
-    elif gameBoard [2][1] == "X" and gameBoard [2][2] == "X" and gameBoard [2][3] == "X":
-        return "X has won the game"
+    elif gameBoard [1][1] == " X " and gameBoard [1][2] == " X " and gameBoard [1][3] == " X ":
+        return win_x()
     
-    elif gameBoard [2][1] == "O" and gameBoard [2][2] == "O" and gameBoard [2][3] == "O":
-        return "O has won the game"
+    elif gameBoard [1][1] == " O " and gameBoard [1][2] == " O " and gameBoard [1][3] == " O ":
+        return win_o()
     
-    elif gameBoard [3][1] == "X" and gameBoard [3][2] == "X" and gameBoard [3][3] == "X":
-        return "X has won the game"
+    elif gameBoard [2][1] == " X " and gameBoard [2][2] == " X " and gameBoard [2][3] == " X ":
+        return win_x()
     
-    elif gameBoard [3][1] == "O" and gameBoard [3][2] == "O" and gameBoard [3][3] == "O":
-        return "O has won the game"
+    elif gameBoard [2][1] == " O " and gameBoard [2][2] == " O " and gameBoard [2][3] == " O ":
+        return win_o()
     
     # Y axis
-    elif gameBoard [1][1] == "X" and gameBoard [2][1] == "X" and gameBoard [3][1] == "X":
-        return "X has won the game"
+    elif gameBoard [0][1] == " X " and gameBoard [1][1] == " X " and gameBoard [2][1] == " X ":
+        return win_x()
     
-    elif gameBoard [1][1] == "O" and gameBoard [2][1] == "O" and gameBoard [3][1] == "O":
-        return "O has won the game"
+    elif gameBoard [0][1] == " O " and gameBoard [1][1] == " O " and gameBoard [2][1] == " O ":
+        return win_o()
     
-    elif gameBoard [1][2] == "X" and gameBoard [2][2] == "X" and gameBoard [3][2] == "X":
-        return "X has won the game"
+    elif gameBoard [0][2] == " X " and gameBoard [1][2] == " X " and gameBoard [2][2] == " X ":
+        return win_x()
     
-    elif gameBoard [1][2] == "O" and gameBoard [2][2] == "O" and gameBoard [3][2] == "O":
-        return "O has won the game"
+    elif gameBoard [0][2] == " O " and gameBoard [1][2] == " O " and gameBoard [2][2] == " O ":
+        return win_o()
     
-    elif gameBoard [1][3] == "X" and gameBoard [2][3] == "X" and gameBoard [3][3] == "X":
-        return "X has won the game"
+    elif gameBoard [0][3] == " X " and gameBoard [1][3] == " X " and gameBoard [2][3] == " X ":
+        return win_x()
     
-    elif gameBoard [1][3] == "O" and gameBoard [2][3] == "O" and gameBoard [3][3] == "O":
-        return "O has won the game"
+    elif gameBoard [0][3] == " O " and gameBoard [1][3] == " O " and gameBoard [2][3] == " O ":
+        return win_o()
     
     # Cross
     
-    elif gameBoard [1][1] == "X" and gameBoard [2][2] == "X" and gameBoard [3][3] == "X":
-        return "X has won the game"
+    elif gameBoard [0][1] == " X " and gameBoard [1][2] == " X " and gameBoard [2][3] == " X ":
+        return win_x()
     
-    elif gameBoard [1][1] == "O" and gameBoard [2][2] == "O" and gameBoard [3][3] == "O":
-        return "O has won the game"
+    elif gameBoard [0][1] == " O " and gameBoard [1][2] == " O " and gameBoard [2][3] == " O ":
+        return win_o()
     
-    elif gameBoard [1][3] == "X" and gameBoard [2][2] == "X" and gameBoard [3][1] == "X":
-        return "X has won the game"
+    elif gameBoard [0][3] == " X " and gameBoard [1][2] == " X " and gameBoard [2][1] == " X ":
+        return win_x()
     
-    elif gameBoard [1][3] == "O" and gameBoard [2][2] == "O" and gameBoard [3][1] == "O":
-        return "O has won the game"
+    elif gameBoard [0][3] == " O " and gameBoard [1][2] == " O " and gameBoard [2][1] == " O ":
+        return win_o()
     
     else:
         return False
 
-
+def winner1(gameBoard):
+    if gameBoard [0][1] == " X " and gameBoard [0][2] == " X " and gameBoard [0][3] == " X ":
+        return
     
+    elif gameBoard [0][1] == " O " and gameBoard [0][2] == " O " and gameBoard [0][3] == " O ":
+        return
+    
+    elif gameBoard [1][1] == " X " and gameBoard [1][2] == " X " and gameBoard [1][3] == " X ":
+        return
+    
+    elif gameBoard [1][1] == " O " and gameBoard [1][2] == " O " and gameBoard [1][3] == " O ":
+        return
+    
+    elif gameBoard [2][1] == " X " and gameBoard [2][2] == " X " and gameBoard [2][3] == " X ":
+        return
+    
+    elif gameBoard [2][1] == " O " and gameBoard [2][2] == " O " and gameBoard [2][3] == " O ":
+        return
+    
+    # Y axis
+    elif gameBoard [0][1] == " X " and gameBoard [1][1] == " X " and gameBoard [2][1] == " X ":
+        return
+    
+    elif gameBoard [0][1] == " O " and gameBoard [1][1] == " O " and gameBoard [2][1] == " O ":
+        return
+    
+    elif gameBoard [0][2] == " X " and gameBoard [1][2] == " X " and gameBoard [2][2] == " X ":
+        return
+
+    elif gameBoard [0][2] == " O " and gameBoard [1][2] == " O " and gameBoard [2][2] == " O ":
+        return
+    
+    elif gameBoard [0][3] == " X " and gameBoard [1][3] == " X " and gameBoard [2][3] == " X ":
+        return
+    
+    elif gameBoard [0][3] == " O " and gameBoard [1][3] == " O " and gameBoard [2][3] == " O ":
+        return
+    
+    # Cross
+    
+    elif gameBoard [0][1] == " X " and gameBoard [1][2] == " X " and gameBoard [2][3] == " X ":
+        return
+    
+    elif gameBoard [0][1] == " O " and gameBoard [1][2] == " O " and gameBoard [2][3] == " O ":
+        return
+    
+    elif gameBoard [0][3] == " X " and gameBoard [1][2] == " X " and gameBoard [2][1] == " X ":
+        return
+    
+    elif gameBoard [0][3] == " O " and gameBoard [1][2] == " O " and gameBoard [2][1] == " O ":
+        return
+    
+    else:
+        return False
         
 
 def modify_array(num, turn, gameBoard):
     if num == "A1":
-        gameBoard[1][1] = turn
+        gameBoard[0][1] = turn
     elif num == "A2":
-        gameBoard[1][2] = turn
+        gameBoard[0][2] = turn
     elif num == "A3":
-        gameBoard[1][3] = turn
+        gameBoard[0][3] = turn
     elif num == "B1":
-        gameBoard[2][1] = turn
+        gameBoard[1][1] = turn
     elif num == "B2":
-        gameBoard[2][2] = turn
+        gameBoard[1][2] = turn
     elif num == "B3":
-        gameBoard[2][3] = turn
+        gameBoard[1][3] = turn
     elif num == "C1":
-        gameBoard[3][1] = turn
+        gameBoard[2][1] = turn
     elif num == "C2":
-        gameBoard[3][2] = turn
+        gameBoard[2][2] = turn
     elif num == "C3":
-        gameBoard[3][3] = turn
+        gameBoard[2][3] = turn
         
 
    
 def game():
     turn_counter = 0
-    gameBoard = [["#", "1", "2", "3"], ["A", ".", ".", "."], ["B", ".", ".", "."], ["C", ".", ".", "."]]
+    gameBoard = [["A", " . ", " . ", " . "], ["B", " . ", " . ", " . "], ["C", " . ", " . ", " . "]]
     pickable_steps = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3", "Q"]       
     steps = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"] 
     while True:
@@ -124,7 +179,7 @@ def game():
             elif (numberPicked in steps) and numberPicked != 'Q':
                 if numberPicked in pickable_steps:
                     pickable_steps.remove(numberPicked)
-                    modify_array(numberPicked, "O", gameBoard)
+                    modify_array(numberPicked, " O ", gameBoard)
                     turn_counter += 1
                 else:
                     print("Already used input!")
@@ -147,22 +202,24 @@ def game():
             elif numberPicked in steps:
                 if numberPicked in pickable_steps:
                     pickable_steps.remove(numberPicked)
-                    modify_array(numberPicked, "X", gameBoard)
+                    modify_array(numberPicked, " X ", gameBoard)
                     turn_counter += 1
                 else:
                     print("Already used input!")
             else:
                 print("Invalid input, try again!")      
-        if winner(gameBoard) != False:
+        if winner1(gameBoard) != False:
             printGameBoard(gameBoard)
-            print()
-            print(winner(gameBoard))
-            sleep(3)
+            sleep(2)
+            clearConsole()
+            winner(gameBoard)
+            sleep(2)
             break
         if is_board_full(gameBoard):
             printGameBoard(gameBoard)
-            print()
-            print("It's a tie!")
+            sleep(1)
+            clearConsole()
+            tie()
             sleep(3)
             break    
 
@@ -170,7 +227,7 @@ def game():
 def is_board_full(gb):
     for element in gb:
         for e in element:
-            if e == ".":
+            if e == " . ":
                 return False
     return True
                 
