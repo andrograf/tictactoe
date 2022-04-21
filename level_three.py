@@ -36,8 +36,10 @@ def playerX (lista2):
     while start:
         #print(x,y)
         if lista2[x][y] == ' . ':
-            lista2[x][y] = ' X '
+            lista2[x][y] = '\x1b[0;31m X \x1b[0;0m'
             board(lista2)
+            print('Automata mode')
+            print('\x1b[0;96mO\x1b[0;0m\'s turn')
             start = False  
         else:
             x = random.randrange(0,3)
@@ -52,8 +54,10 @@ def playerY (lista2):
     while start:
         #print(x,y)
         if lista2[x][y] == ' . ':
-            lista2[x][y] = ' O '
+            lista2[x][y] = "\x1b[0;96m O \x1b[0;0m"
             board(lista2)
+            print('Automata mode')
+            print('\x1b[0;31mX\x1b[0;0m\'s turn')
             start = False  
         else:
             x = random.randrange(0,3)
@@ -62,98 +66,98 @@ def playerY (lista2):
         
 
 def wins(list):
-    if (list[0][1] == ' X ' and list[0][2]== ' X ' and list[0][3]) == ' X ':
-        sleep(2)
+    if (list[0][1] == '\x1b[0;31m X \x1b[0;0m' and list[0][2]== '\x1b[0;31m X \x1b[0;0m' and list[0][3]) == '\x1b[0;31m X \x1b[0;0m':
+        #sleep(2)
         clearConsole()
         win_x()
         win = True
         return win
-    elif (list[1][1] == ' X ' and list[1][2]== ' X ' and list[1][3]) == ' X ':
-        sleep(2)
+    elif (list[1][1] == '\x1b[0;31m X \x1b[0;0m' and list[1][2]== '\x1b[0;31m X \x1b[0;0m' and list[1][3]) == '\x1b[0;31m X \x1b[0;0m':
+        #sleep(2)
         clearConsole()
         win_x()
         win = True
         return win
-    elif (list[2][1]== ' X ' and list[2][2]== ' X ' and list[2][3]) == ' X ':
-        sleep(2)
+    elif (list[2][1]== '\x1b[0;31m X \x1b[0;0m' and list[2][2]== '\x1b[0;31m X \x1b[0;0m' and list[2][3]) == '\x1b[0;31m X \x1b[0;0m':
+        #sleep(2)
         clearConsole()
         win_x()
         win = True
         return win
-    elif (list[0][1] == ' X 'and list[1][2]== ' X ' and list[2][3]) == ' X ':    
-        sleep(2) 
+    elif (list[0][1] == '\x1b[0;31m X \x1b[0;0m'and list[1][2]== '\x1b[0;31m X \x1b[0;0m' and list[2][3]) == '\x1b[0;31m X \x1b[0;0m':    
+        #sleep(2) 
         clearConsole()
         win_x()
         win = True
         return win
-    elif (list[0][3]== ' X ' and list[1][2]== ' X ' and list[2][1]) == ' X ':
-        sleep(2)
+    elif (list[0][3]== '\x1b[0;31m X \x1b[0;0m' and list[1][2]== '\x1b[0;31m X \x1b[0;0m' and list[2][1]) == '\x1b[0;31m X \x1b[0;0m':
+        #sleep(2)
         clearConsole()
         win_x()
         win = True
         return win
-    elif (list[0][1]== ' X ' and list[1][1]== ' X ' and list[2][1]) == ' X ':
-        sleep(2)
+    elif (list[0][1]== '\x1b[0;31m X \x1b[0;0m' and list[1][1]== '\x1b[0;31m X \x1b[0;0m' and list[2][1]) == '\x1b[0;31m X \x1b[0;0m':
+        #sleep(2)
         clearConsole()
         win_x()
         win = True
         return win
-    elif (list[0][2]== ' X ' and list[1][2]== ' X ' and list[2][2]) == ' X ':
-        sleep(2)
+    elif (list[0][2]== '\x1b[0;31m X \x1b[0;0m' and list[1][2]== '\x1b[0;31m X \x1b[0;0m' and list[2][2]) == '\x1b[0;31m X \x1b[0;0m':
+        #sleep(2)
         clearConsole()
         win_x()
         win = True
         return win
-    elif (list[0][3]== ' X ' and list[1][3]== ' X ' and list[2][3]) == ' X ':
-        sleep(2)
+    elif (list[0][3]== '\x1b[0;31m X \x1b[0;0m' and list[1][3]== '\x1b[0;31m X \x1b[0;0m' and list[2][3]) == '\x1b[0;31m X \x1b[0;0m':
+        #sleep(2)
         clearConsole()
         win_x()
         win = True
         return win
-    elif (list[0][1]== ' O ' and list[0][2]== ' O ' and list[0][3]) == ' O ':
-        sleep(2)
+    elif (list[0][1]== "\x1b[0;96m O \x1b[0;0m" and list[0][2]== "\x1b[0;96m O \x1b[0;0m" and list[0][3]) == "\x1b[0;96m O \x1b[0;0m":
+        #sleep(2)
         clearConsole()
         win_o()
         win = True
         return win
-    elif (list[1][1]== ' O ' and list[1][2]== ' O ' and list[1][3]) == ' O ':
-        sleep(2)
+    elif (list[1][1]== "\x1b[0;96m O \x1b[0;0m" and list[1][2]== "\x1b[0;96m O \x1b[0;0m" and list[1][3]) == "\x1b[0;96m O \x1b[0;0m":
+        #sleep(2)
         clearConsole()
         win_o()
         win = True
         return win
-    elif (list[2][1]== ' O ' and list[2][2]== ' O ' and list[2][3]) == ' O ':
-        sleep(2)
+    elif (list[2][1]== "\x1b[0;96m O \x1b[0;0m" and list[2][2]== "\x1b[0;96m O \x1b[0;0m" and list[2][3]) == "\x1b[0;96m O \x1b[0;0m":
+        #sleep(2)
         clearConsole()
         win_o()
         win = True
         return win
-    elif (list[0][1]== ' O ' and list[1][2]== ' O ' and list[2][3]) == ' O ':
-        sleep(2)
+    elif (list[0][1]== "\x1b[0;96m O \x1b[0;0m" and list[1][2]== "\x1b[0;96m O \x1b[0;0m" and list[2][3]) == "\x1b[0;96m O \x1b[0;0m":
+        #sleep(2)
         clearConsole()
         win_o()
         win = True
         return win
-    elif (list[0][3]== ' O ' and list[1][2]== ' O ' and list[2][1]) == ' O ':
-        sleep(2)
+    elif (list[0][3]== "\x1b[0;96m O \x1b[0;0m" and list[1][2]== "\x1b[0;96m O \x1b[0;0m" and list[2][1]) == "\x1b[0;96m O \x1b[0;0m":
+        #sleep(2)
         clearConsole()
         win_o()
         win = True
         return win
-    elif (list[0][1]== ' O ' and list[1][1]== ' O ' and list[2][1]) == ' O ':
-        sleep(2)
+    elif (list[0][1]== "\x1b[0;96m O \x1b[0;0m" and list[1][1]== "\x1b[0;96m O \x1b[0;0m" and list[2][1]) == "\x1b[0;96m O \x1b[0;0m":
+        #sleep(2)
         clearConsole()
         win_o()
         win = True
         return win
-    elif (list[0][2]== ' O ' and list[1][2]== ' O ' and list[2][2]) == ' O ':
-        sleep(2)
+    elif (list[0][2]== "\x1b[0;96m O \x1b[0;0m" and list[1][2]== "\x1b[0;96m O \x1b[0;0m" and list[2][2]) == "\x1b[0;96m O \x1b[0;0m":
+        #sleep(2)
         clearConsole()
         win_o()
         win = True
         return win
-    elif (list[0][3]== ' O ' and list[1][3]== ' O ' and list[2][3]) == ' O ':
-        sleep(2)
+    elif (list[0][3]== "\x1b[0;96m O \x1b[0;0m" and list[1][3]== "\x1b[0;96m O \x1b[0;0m" and list[2][3]) == "\x1b[0;96m O \x1b[0;0m":
+        #sleep(2)
         clearConsole()
         win_o()
         win = True

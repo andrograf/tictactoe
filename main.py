@@ -18,7 +18,7 @@ def main_menu():
        ██║   ██║██║    ╚════╝  ██║   ██╔══██║██║    ╚════╝  ██║   ██║   ██║██╔══╝  
        ██║   ██║╚██████╗       ██║   ██║  ██║╚██████╗       ██║   ╚██████╔╝███████╗
        ╚═╝   ╚═╝ ╚═════╝       ╚═╝   ╚═╝  ╚═╝ ╚═════╝       ╚═╝    ╚═════╝ ╚══════╝
-                                                                        by TOE FIGHTERS      
+                                                                        by \x1b[0;31mTOE\x1b[0;0m \x1b[0;96mFIGHTERS\x1b[0;0m      
 
 
                                 (0)Rules
@@ -42,13 +42,13 @@ def rules():
                     ██╔══██╗██║   ██║██║     ██╔══╝  ╚════██║
                     ██║  ██║╚██████╔╝███████╗███████╗███████║
                     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝
-                                                for Tic-Tac-Toe
+                                                for \x1b[0;31mTic\x1b[0;0m-\x1b[0;96mTac\x1b[0;0m-\x1b[0;31mToe\x1b[0;0m
                     
 
             1. The game is played on a grid that's 3 squares by 3 squares.
 
 
-            2. Player-1(/machine) are X, player-2(/machine) is O. 
+            2. Player-1(/machine) are \x1b[0;31mX\x1b[0;0m, player-2(/machine) is \x1b[0;96mO\x1b[0;0m. 
 
             Players take turns putting their marks in empty squares.
 
@@ -67,12 +67,12 @@ def rules():
 
 def credits():
     print("""                       
-                                +-+-+-+-+-+-+-+
+                                \x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m
                                 |C|R|E|D|I|T|S|
-                                +-+-+-+-+-+-+-+
+                                \x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m
 
 
-                             +-+-+-+-+-+-+-+-+-+-+
+                             \x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m
                              |                   |
                              |    Hájas Tamás    |
                              |                   |
@@ -80,7 +80,7 @@ def credits():
                              |                   |
                              |  Mirejder Róbert  |
                              |                   |
-                             +-+-+-+-+-+-+-+-+-+-+""")
+                             \x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m""")
 
 
 
@@ -133,7 +133,7 @@ while run:
         elif x == "Q" or x == 'q':
             clearConsole()
             credits()
-            sleep(4)
+            sleep(5)
             clearConsole()
             run = False
         

@@ -58,7 +58,7 @@ def playerMove(board, keyCorrect):
     run = True
     while run:
 
-        move = input('Please select a position to place X: ')
+        move = input('Please select a position to place \x1b[0;31mX\x1b[0;0m: ')
         try:
             move = keyCorrect[move.lower()]
             move = abs(int(move))
@@ -70,7 +70,7 @@ def playerMove(board, keyCorrect):
             elif 1 <= move < 10:
                 if spaceIsFree(move,board):
                     #run = False
-                    insertLetter('X', move, board)
+                    insertLetter('\x1b[0;31mX\x1b[0;0m', move, board)
                     break
                 else:
                     clearConsole()
@@ -92,7 +92,7 @@ def compMove(board):
                      if letter == ' ' and x != 0]
     move = 0
 
-    for let in ['O', 'X']:
+    for let in ['\x1b[0;96mO\x1b[0;0m', '\x1b[0;31mX\x1b[0;0m']:
         for i in possibleMoves:
             # nem módosítja az egész boardot, hanem másolja
             boardCopy = board[:]
@@ -146,7 +146,7 @@ def main():
     keyCorrect = {"a1":1, "a2":2, "a3":3,"b1":4, "b2":5, "b3":6,"c1":7, "c2":8, "c3":9, 'q':11}
     printBoard(board)
     while not (isBoardFull(board)):
-        if not (isWinner(board, 'O')):
+        if not (isWinner(board, '\x1b[0;96mO\x1b[0;0m')):
             #playerMove(board, keyCorrect)
             if  move_(playerMove, board, keyCorrect) == 11:
                 clearConsole()
@@ -166,7 +166,7 @@ def main():
             time.sleep(5)
             break
 
-        if not (isWinner(board, 'X')):
+        if not (isWinner(board, '\x1b[0;31mX\x1b[0;0m')):
             move = compMove(board)
             if move == 0:
                 clearConsole()
@@ -176,7 +176,7 @@ def main():
                 printBoard(board)
                 time.sleep(1)
                 clearConsole()
-                insertLetter('O', move, board)
+                insertLetter('\x1b[0;96mO\x1b[0;0m', move, board)
                 # print('Computer placed an O in position', move, ':')
                 printBoard(board)
         else:

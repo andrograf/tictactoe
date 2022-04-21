@@ -27,110 +27,110 @@ def printGameBoard(gameBoard):
 def winner(gameBoard):
     # X axis
 
-    if gameBoard [0][1] == " X " and gameBoard [0][2] == " X " and gameBoard [0][3] == " X ":
+    if gameBoard [0][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [0][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [0][3] == "\x1b[0;31m X \x1b[0;0m":
         return win_x()
     
-    elif gameBoard [0][1] == " O " and gameBoard [0][2] == " O " and gameBoard [0][3] == " O ":
+    elif gameBoard [0][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [0][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [0][3] == "\x1b[0;96m O \x1b[0;0m":
         return win_o()
     
-    elif gameBoard [1][1] == " X " and gameBoard [1][2] == " X " and gameBoard [1][3] == " X ":
+    elif gameBoard [1][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][3] == "\x1b[0;31m X \x1b[0;0m":
         return win_x()
     
-    elif gameBoard [1][1] == " O " and gameBoard [1][2] == " O " and gameBoard [1][3] == " O ":
+    elif gameBoard [1][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][3] == "\x1b[0;96m O \x1b[0;0m":
         return win_o()
     
-    elif gameBoard [2][1] == " X " and gameBoard [2][2] == " X " and gameBoard [2][3] == " X ":
+    elif gameBoard [2][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;31m X \x1b[0;0m":
         return win_x()
     
-    elif gameBoard [2][1] == " O " and gameBoard [2][2] == " O " and gameBoard [2][3] == " O ":
+    elif gameBoard [2][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;96m O \x1b[0;0m":
         return win_o()
     
     # Y axis
-    elif gameBoard [0][1] == " X " and gameBoard [1][1] == " X " and gameBoard [2][1] == " X ":
+    elif gameBoard [0][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][1] == "\x1b[0;31m X \x1b[0;0m":
         return win_x()
     
-    elif gameBoard [0][1] == " O " and gameBoard [1][1] == " O " and gameBoard [2][1] == " O ":
+    elif gameBoard [0][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][1] == "\x1b[0;96m O \x1b[0;0m":
         return win_o()
     
-    elif gameBoard [0][2] == " X " and gameBoard [1][2] == " X " and gameBoard [2][2] == " X ":
+    elif gameBoard [0][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][2] == "\x1b[0;31m X \x1b[0;0m":
         return win_x()
     
-    elif gameBoard [0][2] == " O " and gameBoard [1][2] == " O " and gameBoard [2][2] == " O ":
+    elif gameBoard [0][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][2] == "\x1b[0;96m O \x1b[0;0m":
         return win_o()
     
-    elif gameBoard [0][3] == " X " and gameBoard [1][3] == " X " and gameBoard [2][3] == " X ":
+    elif gameBoard [0][3] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][3] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;31m X \x1b[0;0m":
         return win_x()
     
-    elif gameBoard [0][3] == " O " and gameBoard [1][3] == " O " and gameBoard [2][3] == " O ":
+    elif gameBoard [0][3] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][3] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;96m O \x1b[0;0m":
         return win_o()
     
     # Cross
     
-    elif gameBoard [0][1] == " X " and gameBoard [1][2] == " X " and gameBoard [2][3] == " X ":
+    elif gameBoard [0][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;31m X \x1b[0;0m":
         return win_x()
     
-    elif gameBoard [0][1] == " O " and gameBoard [1][2] == " O " and gameBoard [2][3] == " O ":
+    elif gameBoard [0][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;96m O \x1b[0;0m":
         return win_o()
     
-    elif gameBoard [0][3] == " X " and gameBoard [1][2] == " X " and gameBoard [2][1] == " X ":
+    elif gameBoard [0][3] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][1] == "\x1b[0;31m X \x1b[0;0m":
         return win_x()
     
-    elif gameBoard [0][3] == " O " and gameBoard [1][2] == " O " and gameBoard [2][1] == " O ":
+    elif gameBoard [0][3] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][1] == "\x1b[0;96m O \x1b[0;0m":
         return win_o()
     
     else:
         return False
 
 def winner1(gameBoard):
-    if gameBoard [0][1] == " X " and gameBoard [0][2] == " X " and gameBoard [0][3] == " X ":
+    if gameBoard [0][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [0][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [0][3] == "\x1b[0;31m X \x1b[0;0m":
         return
     
-    elif gameBoard [0][1] == " O " and gameBoard [0][2] == " O " and gameBoard [0][3] == " O ":
+    elif gameBoard [0][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [0][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [0][3] == "\x1b[0;96m O \x1b[0;0m":
         return
     
-    elif gameBoard [1][1] == " X " and gameBoard [1][2] == " X " and gameBoard [1][3] == " X ":
+    elif gameBoard [1][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][3] == "\x1b[0;31m X \x1b[0;0m":
         return
     
-    elif gameBoard [1][1] == " O " and gameBoard [1][2] == " O " and gameBoard [1][3] == " O ":
+    elif gameBoard [1][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][3] == "\x1b[0;96m O \x1b[0;0m":
         return
     
-    elif gameBoard [2][1] == " X " and gameBoard [2][2] == " X " and gameBoard [2][3] == " X ":
+    elif gameBoard [2][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;31m X \x1b[0;0m":
         return
     
-    elif gameBoard [2][1] == " O " and gameBoard [2][2] == " O " and gameBoard [2][3] == " O ":
+    elif gameBoard [2][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;96m O \x1b[0;0m":
         return
     
     # Y axis
-    elif gameBoard [0][1] == " X " and gameBoard [1][1] == " X " and gameBoard [2][1] == " X ":
+    elif gameBoard [0][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][1] == "\x1b[0;31m X \x1b[0;0m":
         return
     
-    elif gameBoard [0][1] == " O " and gameBoard [1][1] == " O " and gameBoard [2][1] == " O ":
+    elif gameBoard [0][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][1] == "\x1b[0;96m O \x1b[0;0m":
         return
     
-    elif gameBoard [0][2] == " X " and gameBoard [1][2] == " X " and gameBoard [2][2] == " X ":
+    elif gameBoard [0][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][2] == "\x1b[0;31m X \x1b[0;0m":
         return
 
-    elif gameBoard [0][2] == " O " and gameBoard [1][2] == " O " and gameBoard [2][2] == " O ":
+    elif gameBoard [0][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][2] == "\x1b[0;96m O \x1b[0;0m":
         return
     
-    elif gameBoard [0][3] == " X " and gameBoard [1][3] == " X " and gameBoard [2][3] == " X ":
+    elif gameBoard [0][3] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][3] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;31m X \x1b[0;0m":
         return
     
-    elif gameBoard [0][3] == " O " and gameBoard [1][3] == " O " and gameBoard [2][3] == " O ":
+    elif gameBoard [0][3] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][3] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;96m O \x1b[0;0m":
         return
     
     # Cross
     
-    elif gameBoard [0][1] == " X " and gameBoard [1][2] == " X " and gameBoard [2][3] == " X ":
+    elif gameBoard [0][1] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;31m X \x1b[0;0m":
         return
     
-    elif gameBoard [0][1] == " O " and gameBoard [1][2] == " O " and gameBoard [2][3] == " O ":
+    elif gameBoard [0][1] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][3] == "\x1b[0;96m O \x1b[0;0m":
         return
     
-    elif gameBoard [0][3] == " X " and gameBoard [1][2] == " X " and gameBoard [2][1] == " X ":
+    elif gameBoard [0][3] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;31m X \x1b[0;0m" and gameBoard [2][1] == "\x1b[0;31m X \x1b[0;0m":
         return
     
-    elif gameBoard [0][3] == " O " and gameBoard [1][2] == " O " and gameBoard [2][1] == " O ":
+    elif gameBoard [0][3] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [1][2] == "\x1b[0;96m O \x1b[0;0m" and gameBoard [2][1] == "\x1b[0;96m O \x1b[0;0m":
         return
     
     else:
@@ -169,7 +169,7 @@ def game():
         if turn_counter % 2 == 1:
             printGameBoard(gameBoard)
             print()
-            print("O's turn.")
+            print("\x1b[0;96mO\x1b[0;0m's turn.")
             numberPicked = input("Choose a step from the coordinates: ").upper()
             clearConsole()
             if numberPicked == "Q":
@@ -179,7 +179,7 @@ def game():
             elif (numberPicked in steps) and numberPicked != 'Q':
                 if numberPicked in pickable_steps:
                     pickable_steps.remove(numberPicked)
-                    modify_array(numberPicked, " O ", gameBoard)
+                    modify_array(numberPicked, "\x1b[0;96m O \x1b[0;0m", gameBoard)
                     turn_counter += 1
                 else:
                     print("Already used input!")
@@ -192,7 +192,7 @@ def game():
         elif turn_counter % 2 == 0:
             printGameBoard(gameBoard)
             print()
-            print("X's turn.")
+            print("\x1b[0;31mX\x1b[0;0m's turn.")
             numberPicked = input("Choose a step from the coordinates: ").upper()
             clearConsole()
             if numberPicked == "Q":
@@ -202,7 +202,7 @@ def game():
             elif numberPicked in steps:
                 if numberPicked in pickable_steps:
                     pickable_steps.remove(numberPicked)
-                    modify_array(numberPicked, " X ", gameBoard)
+                    modify_array(numberPicked, "\x1b[0;31m X \x1b[0;0m", gameBoard)
                     turn_counter += 1
                 else:
                     print("Already used input!")
