@@ -115,49 +115,49 @@ def wins(list):
         win = True
         return win
     elif (list[0][1]== "\x1b[0;96m O \x1b[0;0m" and list[0][2]== "\x1b[0;96m O \x1b[0;0m" and list[0][3]) == "\x1b[0;96m O \x1b[0;0m":
-        #sleep(2)
+        sleep(1)
         clearConsole()
         win_o()
         win = True
         return win
     elif (list[1][1]== "\x1b[0;96m O \x1b[0;0m" and list[1][2]== "\x1b[0;96m O \x1b[0;0m" and list[1][3]) == "\x1b[0;96m O \x1b[0;0m":
-        #sleep(2)
+        sleep(1)
         clearConsole()
         win_o()
         win = True
         return win
     elif (list[2][1]== "\x1b[0;96m O \x1b[0;0m" and list[2][2]== "\x1b[0;96m O \x1b[0;0m" and list[2][3]) == "\x1b[0;96m O \x1b[0;0m":
-        #sleep(2)
+        sleep(1)
         clearConsole()
         win_o()
         win = True
         return win
     elif (list[0][1]== "\x1b[0;96m O \x1b[0;0m" and list[1][2]== "\x1b[0;96m O \x1b[0;0m" and list[2][3]) == "\x1b[0;96m O \x1b[0;0m":
-        #sleep(2)
+        sleep(1)
         clearConsole()
         win_o()
         win = True
         return win
     elif (list[0][3]== "\x1b[0;96m O \x1b[0;0m" and list[1][2]== "\x1b[0;96m O \x1b[0;0m" and list[2][1]) == "\x1b[0;96m O \x1b[0;0m":
-        #sleep(2)
+        sleep(1)
         clearConsole()
         win_o()
         win = True
         return win
     elif (list[0][1]== "\x1b[0;96m O \x1b[0;0m" and list[1][1]== "\x1b[0;96m O \x1b[0;0m" and list[2][1]) == "\x1b[0;96m O \x1b[0;0m":
-        #sleep(2)
+        sleep(1)
         clearConsole()
         win_o()
         win = True
         return win
     elif (list[0][2]== "\x1b[0;96m O \x1b[0;0m" and list[1][2]== "\x1b[0;96m O \x1b[0;0m" and list[2][2]) == "\x1b[0;96m O \x1b[0;0m":
-        #sleep(2)
+        sleep(1)
         clearConsole()
         win_o()
         win = True
         return win
     elif (list[0][3]== "\x1b[0;96m O \x1b[0;0m" and list[1][3]== "\x1b[0;96m O \x1b[0;0m" and list[2][3]) == "\x1b[0;96m O \x1b[0;0m":
-        #sleep(2)
+        sleep(1)
         clearConsole()
         win_o()
         win = True
