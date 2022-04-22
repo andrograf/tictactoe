@@ -167,6 +167,7 @@ def wins(list):
         return win
 
 def level_three():
+    print('\033[?25l', end="")
     lista2 = [['A',' . ',' . ',' . '],['B',' . ',' . ',' . '],['C',' . ',' . ',' . ']]
     run2 = 1
     board(lista2)
@@ -199,6 +200,7 @@ def level_three():
             sleep(2)
         run2 = 1
         break
+    print('\033[?25h', end="")
     return False
     
 
