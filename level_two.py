@@ -151,7 +151,7 @@ def main():
             if  move_(playerMove, board, keyCorrect) == 11:
                 clearConsole()
                 game_over()
-                time.sleep(5)
+                #time.sleep(5)
                 clearConsole()
                 break
             else:
@@ -163,7 +163,7 @@ def main():
             time.sleep(1.5)
             clearConsole()
             game_over()
-            time.sleep(5)
+            #time.sleep(5)
             break
 
         if not (isWinner(board, '\x1b[0;31mX\x1b[0;0m')):

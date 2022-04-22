@@ -38,7 +38,7 @@ def playerX (lista2):
         if lista2[x][y] == ' . ':
             lista2[x][y] = '\x1b[0;31m X \x1b[0;0m'
             board(lista2)
-            print('Automata mode')
+            print('Automatic mode')
             print('\x1b[0;96mO\x1b[0;0m\'s turn')
             start = False  
         else:
@@ -56,7 +56,7 @@ def playerY (lista2):
         if lista2[x][y] == ' . ':
             lista2[x][y] = "\x1b[0;96m O \x1b[0;0m"
             board(lista2)
-            print('Automata mode')
+            print('Automatic mode')
             print('\x1b[0;31mX\x1b[0;0m\'s turn')
             start = False  
         else:

@@ -66,6 +66,7 @@ def rules():
             """)
 
 def credits():
+    print('\033[?25l', end="")
     print("""                       
                                 \x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m
                                 |C|R|E|D|I|T|S|
@@ -81,6 +82,7 @@ def credits():
                              |  Mirejder Róbert  |
                              |                   |
                              \x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m\x1b[0;96m-\x1b[0;0m\x1b[0;31m+\x1b[0;0m""")
+    print('\033[?25h', end="")
 
 
 

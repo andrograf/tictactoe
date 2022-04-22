@@ -1,7 +1,8 @@
 import os
 from time import sleep
-from gameover import game_over
+#from gameover import game_over
 from gameover import win_x, win_o, tie
+from gameover import game_over
   
 def clearConsole():
     command = 'clear'
@@ -174,7 +175,7 @@ def game():
             clearConsole()
             if numberPicked == "Q":
                 game_over()
-                sleep(5)
+                #sleep(5)
                 break
             elif (numberPicked in steps) and numberPicked != 'Q':
                 if numberPicked in pickable_steps:
@@ -197,7 +198,7 @@ def game():
             clearConsole()
             if numberPicked == "Q":
                 game_over()
-                sleep(5)
+                #sleep(5)
                 break
             elif numberPicked in steps:
                 if numberPicked in pickable_steps:
